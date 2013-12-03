@@ -1,4 +1,6 @@
 FilmApp::Application.routes.draw do
+  resources :films
+
   resources :comments
 
   resources :users
