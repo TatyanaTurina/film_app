@@ -1,0 +1,16 @@
+%p id="notice" = notice
+
+%p
+  %strong Message:
+  = @comment.message 
+
+%p
+  %strong User:
+  = @comment.user_id 
+
+%p
+  %strong Name:
+  = @comment.name
+
+= link_to 'Edit', edit_comment_path(@comment)  |
+= link_to 'Back', comments_path 
