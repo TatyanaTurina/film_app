@@ -8,6 +8,14 @@
       - @comment.errors.full_messages.each do |msg| 
         %li= msg 
       
+  .field
+    =f.label :film_id
+    %br/
+    = f.number_field :film_id
+  .field
+    = f.label :name_f
+    %br/
+    = f.text_field :name_f
 
   .field
     = f.label :message 

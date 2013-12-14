@@ -6,8 +6,8 @@
       %th Message
       %th User
       %th Name
-      %th
-      %th
+      %th Film
+      %th Name_f
       %th
     
   %tbody
@@ -15,7 +15,9 @@
       %tr
         %td= comment.message 
         %td= comment.user_id 
-        %td= comment.name 
+        %td= comment.name
+        %td= comment.film_id
+        %td= comment.name_f 
         %td= link_to 'Show', comment
         %td= link_to 'Edit', edit_comment_path(comment)
         %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } 

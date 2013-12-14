@@ -1,9 +1,10 @@
 FilmApp::Application.routes.draw do
   resources :films
-    resources :comments
+
   resources :comments
 
   resources :users do
+    resources :comments
     resources :comments
   end
 

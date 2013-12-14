@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
+%p id="notice" = notice
 
-<p>
-  <strong>Name f:</strong>
-  <%= @film.name_f %>
-</p>
+%p
+  %strong Name f:
+  = @film.name_f 
 
-<p>
-  <strong>Info:</strong>
-  <%= @film.info %>
-</p>
+%p
+  %strong Info:
+  = @film.info
 
-<%= link_to 'Edit', edit_film_path(@film) %> |
-<%= link_to 'Back', films_path %>
+= link_to 'Edit', edit_film_path(@film)  |
+= link_to 'Back', films_path 

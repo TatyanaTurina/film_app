@@ -1,31 +1,27 @@
-<h1>Listing comments</h1>
+%h1 Listing comments
 
-<table>
-  <thead>
-    <tr>
-      <th>Message</th>
-      <th>User</th>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+%table
+  %thead
+    %tr
+      %th Message
+      %th User
+      %th Name
+      %th Film
+      %th
+      %th
+    
+  %tbody
+    - @comments.each do |comment| 
+      %tr
+        %td= comment.message 
+        %td= comment.user_id 
+        %td= comment.name
+        %td= comment.film_id
+        %td= comment.film 
+        %td= link_to 'Show', comment
+        %td= link_to 'Edit', edit_comment_path(comment)
+        %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } 
 
-  <tbody>
-    <% @comments.each do |comment| %>
-      <tr>
-        <td><%= comment.message %></td>
-        <td><%= comment.user_id %></td>
-        <td><%= comment.name %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+%br
 
-<br>
-
-<%= link_to 'New Comment', new_comment_path %>
+= link_to 'New Comment', new_comment_path

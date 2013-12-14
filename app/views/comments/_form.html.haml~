@@ -2,12 +2,20 @@
   - if @comment.errors.any?
     #error_explanation
       %h2
-	= pluralize(@comment.errors.count, "error")
-	prohibited this comment from being saved:
+        = pluralize(@comment.errors.count, "error")
+        prohibited this comment from being saved:
       %ul
       - @comment.errors.full_messages.each do |msg| 
         %li= msg 
       
+  .field
+    =f.label :film_id
+    %br/
+    = f.number_field :film_id
+  .field
+    = f.label :name_f
+    %br/
+    = f.text_field :fname_f
 
   .field
     = f.label :message 

@@ -26,11 +26,7 @@ class CommentsController < ApplicationController
   def create
     @user =User.find(params[:user_id])
     @comment = @user.comments.create(comment_params)
-    redirect_to user_path(@user)
-    
-    @film =Film.find(params[:film_id])
-    @comment = @film.comments.create(comment_params)
-    redirect_to film_path(@film)
+    redirect_to user_path(@post)
 
     respond_to do |format|
       if @comment.save

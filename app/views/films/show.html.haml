@@ -1,4 +1,4 @@
-%p id="notice" = notice
+%p#notice = notice
 
 %p
   %strong Name f:
@@ -7,6 +7,17 @@
 %p
   %strong Info:
   = @film.info
+
+%h2
+  Comments
+  - @film.comments.each do |comment|
+    %p
+      %strong Name_f:
+      = comment.name_f
+    %p
+      %strong Comment:
+      = comment.message
+
 
 = link_to 'Edit', edit_film_path(@film)  |
 = link_to 'Back', films_path 

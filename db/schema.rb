@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203171655) do
+ActiveRecord::Schema.define(version: 20131214214928) do
 
   create_table "comments", force: true do |t|
     t.string   "message"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20131203171655) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "film_id"
+    t.string   "name_f"
   end
 
   create_table "films", force: true do |t|
