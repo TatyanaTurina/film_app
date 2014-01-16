@@ -1,0 +1,20 @@
+%p
+  %strong= model_class.human_attribute_name(:message) + ':'
+  %br
+  = @comment.message
+%p
+  %strong= model_class.human_attribute_name(:user_id) + ':'
+  %br
+  = @comment.user_id
+%p
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
+  = @comment.name
+%p
+  %strong= model_class.human_attribute_name(:film_id) + ':'
+  %br
+  = @comment.film_id
+%p
+  %strong= model_class.human_attribute_name(:name_f) + ':'
+  %br
+  = @comment.name_f

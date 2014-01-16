@@ -24,11 +24,11 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @user =User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @comment = @user.comments.create(comment_params)
     redirect_to user_path(@user)
     
-    @film =Film.find(params[:film_id])
+    @film = Film.find(params[:film_id])
     @comment = @film.comments.create(comment_params)
     redirect_to film_path(@film)
 
@@ -75,6 +75,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:film_id, :name_f, :message, :user_id, :name)
+      params.require(:comment).permit(:user_id, :film_id, :name_f, :message, :name)
     end
 end

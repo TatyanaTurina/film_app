@@ -1,30 +1,29 @@
-%p#notice = notice 
+- model_class = User
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %p
-  %strong Name:
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
   = @user.name
-
-
 %p
-  %strong Email:
-  = @user.email 
-
-
-%p
-  %strong Parol:
-  = @user.parol
+  %strong= model_class.human_attribute_name(:email) + ':'
+  %br
+  = @user.email
 
 %h2
   Comments
   - @user.comments.each do |comment|
     %p
-      %strong Name:
-      = comment.name
+      %strong Film:
+      = comment.name_f
+    %p
+      =l comment.created_at
     %p
       %strong Comment:
       = comment.message
 
-
-= link_to 'Edit', edit_user_path(@user)  |
-= link_to 'Back', users_path 
-
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), users_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_user_path(@user), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), user_path(@user), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
